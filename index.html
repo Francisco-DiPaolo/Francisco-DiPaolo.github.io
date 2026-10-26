@@ -1,496 +1,313 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco Di Paolo | Level Designer Portfolio</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        siteBg: '#f3f2ee',
-                        cardBg: '#ffffff',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #f3f2ee;
-            color: #1e293b;
-            font-family: 'Inter', sans-serif;
-        }
-        .card-shadow {
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
-        }
-        .project-card {
-            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.08);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Francisco Di Paolo | Level Designer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f2ee;
+      color: #1c1c1e;
+    }
+    .card-shadow {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+    .project-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+  </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-slate-900 selection:text-white">
+<body class="p-4 md:p-10 max-w-6xl mx-auto min-h-screen flex flex-col justify-between">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="max-w-6xl w-full mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <a href="#" onclick="showHome(); return false;" class="group flex items-center gap-2 text-xl font-extrabold tracking-tight text-slate-900">
-            <span id="header-name">Francisco Di Paolo</span>
-            <span class="text-slate-300 font-normal">|</span>
-            <span id="header-title" class="text-slate-600 font-medium group-hover:text-indigo-600 transition">Level Designer</span>
-        </a>
-        <nav class="flex items-center gap-6 text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500">
-            <a href="#" onclick="showHome(); return false;" class="hover:text-slate-900 transition underline underline-offset-8 decoration-2 decoration-indigo-500">PORTFOLIO</a>
-            <a href="#skills-section" onclick="showHome()" class="hover:text-slate-900 transition">SKILLS</a>
-            <a href="#about-section" onclick="showHome()" class="hover:text-slate-900 transition">ABOUT ME</a>
-        </nav>
-    </header>
+  <!-- HEADER / NAVBAR -->
+  <header class="flex justify-between items-center mb-8 pb-4 border-b border-gray-200">
+    <div>
+      <h1 class="text-2xl font-bold tracking-tight text-gray-900" id="header-name">Francisco Di Paolo</h1>
+      <p class="text-sm font-medium text-gray-500" id="header-title">Level Designer</p>
+    </div>
+    <nav class="flex gap-6 text-xs font-semibold tracking-wider text-gray-500 uppercase">
+      <a href="#" onclick="showHome()" class="hover:text-black transition">PORTFOLIO</a>
+      <a href="#about-section" onclick="showHome()" class="hover:text-black transition">ABOUT & SKILLS</a>
+    </nav>
+  </header>
 
-    <!-- MAIN CONTAINER -->
-    <main class="max-w-6xl w-full mx-auto px-4 flex-grow pb-16">
+  <!-- MAIN CONTAINER (HOME VIEW) -->
+  <main id="view-home" class="space-y-10">
+
+    <!-- SECCIÓN: EXPERIENCIA, PROYECTOS Y CONCEPTOS -->
+    <section id="projects-container" class="space-y-10">
+      <!-- Se genera dinámicamente desde Javascript -->
+    </section>
+
+    <!-- SECCIÓN DE INFO Y SKILLS -->
+    <section id="about-section" class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-gray-200">
+      
+      <!-- Filosofía / Interactive Storytelling -->
+      <div class="bg-white p-6 rounded-2xl card-shadow flex flex-col justify-between">
+        <div>
+          <h3 class="text-base font-bold mb-3 text-gray-900">Diseño & Narrativa Espacial</h3>
+          <p class="text-xs text-gray-600 leading-relaxed mb-4" id="about-bio">
+            Diseñador de niveles centrado en la intencionalidad del espacio, el pacing y la conducción del jugador mediante arquitectura, iluminación y blockouts limpios.
+          </p>
+          <ul class="text-xs text-gray-600 space-y-1.5 list-disc list-inside">
+            <li>Guiado visual sin fricción</li>
+            <li>Ritmo y tensión de gameplay</li>
+            <li>Documentación de nivel (LDD)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Skills & Software -->
+      <div class="bg-white p-6 rounded-2xl card-shadow flex flex-col justify-between">
+        <div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Skills</h4>
+              <ul class="text-xs space-y-2 text-gray-700 font-medium" id="skills-list">
+                <!-- Injected via JS -->
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Software</h4>
+              <ul class="text-xs space-y-2 text-gray-700 font-medium" id="software-list">
+                <!-- Injected via JS -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sobre mí / Contacto -->
+      <div class="bg-white p-6 rounded-2xl card-shadow flex flex-col justify-between">
+        <div>
+          <h3 class="text-base font-bold mb-3 text-gray-900">Sobre Mí</h3>
+          <p class="text-xs text-gray-600 leading-relaxed mb-4">
+            Desarrollador e investigador centrado en dinámicas de jugador y diseño de niveles 3D.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100 flex gap-3">
+          <a id="github-link" href="https://github.com/Francisco-DiPaolo" target="_blank" class="text-xs font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition w-full text-center">
+            GitHub
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- DETAIL VIEW (CASE STUDY PAGE) -->
+  <div id="view-detail" class="hidden space-y-8">
+    <button onclick="showHome()" class="text-xs font-semibold text-gray-500 hover:text-black flex items-center gap-1 transition">
+      ← VOLVER AL PORTFOLIO
+    </button>
+    <div id="detail-content" class="space-y-8">
+      <!-- Se genera dinámicamente al hacer click en un proyecto -->
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mt-16 pt-6 border-t border-gray-200 text-center text-xs text-gray-400">
+    <p>© <span id="year"></span> <span id="footer-name">Francisco Di Paolo</span> | Level Design Portfolio</p>
+  </footer>
+
+  <!-- SCRIPT DE DATOS Y LÓGICA -->
+  <script>
+    // =========================================================================
+    // ⚙️ TUS DATOS - EDITÁ ESTA SECCIÓN PARA CAMBIAR TEXTOS O IMÁGENES
+    // =========================================================================
+    const PORTFOLIO_DATA = {
+      name: "Francisco Di Paolo",
+      title: "Level Designer",
+      github: "https://github.com/Francisco-DiPaolo",
+      bio: "Diseñador de niveles centrado en la intencionalidad del espacio, el pacing y la conducción del jugador mediante arquitectura, iluminación y greyboxing.",
+      
+      skills: ["Level Blockouts", "Player Flow & Pacing", "Scripting", "3D Art", "Spatial Storytelling"],
+      software: ["Unity", "3ds Max", "Unreal Engine", "Photoshop", "Twine"],
+
+      projects: [
+        // --- 1. PROFESSIONAL EXPERIENCE ---
+        {
+          id: "taer",
+          title: "TAER - The Tavern at the End of the Road",
+          category: "Professional Experience",
+          coverImage: "https://i.postimg.cc/qRZYYgLT/1920x1080Tavern.png",
+          engine: "Unity",
+          role: "Lead Level Designer",
+          duration: "6 Meses",
+          shortDescription: "Aventura y narrativa espacial desarrollada en Unity. Enfoque en la distribución de espacios e itinerario del jugador.",
+          
+          overview: "Este proyecto explora la narrativa emergente dentro de un espacio cerrado mediante composición arquitectónica y mecánicas de interacción horizontal.",
+          mechanicsText: "Implementación de eventos de entorno basados en proximidad y detonadores de secuencias narrativas.",
+          mechanicsImage: "https://i.postimg.cc/qRZYYgLT/1920x1080Tavern.png"
+        },
+
+        // --- 2. PERSONAL PROJECTS ---
+        {
+          id: "goblin-invasion",
+          title: "Goblin Invasion",
+          category: "Personal Projects",
+          coverImage: "https://i.postimg.cc/qRZYYgLT/1920x1080Tavern.png",
+          engine: "Unity",
+          role: "Level Designer",
+          duration: "Prototipo",
+          shortDescription: "Nivel de acción y defensa táctica centrado en cuellos de botella, líneas de visión y pacing de hordas de enemigos.",
+          
+          overview: "Diseño enfocado en la gestión de espacio y tensión constante del jugador mediante oleadas programadas y posiciones de cobertura.",
+          mechanicsText: "Estructura de arenas de combate interconectadas por pasillos estrechos para forzar decisiones rápidas de reposicionamiento.",
+          mechanicsImage: "https://i.postimg.cc/qRZYYgLT/1920x1080Tavern.png"
+        },
+        {
+          id: "jumanji-like",
+          title: "Jumanji-Like Level",
+          category: "Personal Projects",
+          coverImage: "https://i.postimg.cc/qRZYYgLT/1920x1080Tavern.png",
+          engine: "Unity",
+          role: "Level Designer",
+          duration: "Prototipo",
+          shortDescription: "Nivel cooperativo con trampas dinámicas, navegación selvática y puzles de entorno integrados.",
+          
+          overview: "Mapeo de ruta principal y caminos alternativos con mecánicas de interacción cooperativa para superar obstáculos del entorno.",
+          mechanicsText: "Pacing diseñado con alternancia entre secciones de tensión por trampas y áreas de descanso con puzles mecánicos.",
+          mechanicsImage: "https://i.postimg.cc/qRZYYgLT/1920x1080Tavern.png"
+        },
+
+        // --- 3. DESIGN CONCEPTS & ANALYSES (Proyectos más simples / Sin blockout pesado) ---
+        {
+          id: "pacing-analysis",
+          title: "Análisis de Pacing y Diagramas LDD",
+          category: "Design Concepts & Analysis",
+          coverImage: "https://i.postimg.cc/qRZYYgLT/1920x1080Tavern.png",
+          engine: "Paper / Twine",
+          role: "Game & Level Designer",
+          duration: "Concepto",
+          shortDescription: "Documentación de nivel (LDD), diagramas de flujo 2D y análisis de curvas de dificultad sin producción 3D.",
+          
+          overview: "Serie de esquemas 2D y desgloses teóricos sobre la distribución de elementos de nivel, sightlines y densidad de encuentros.",
+          mechanicsText: "Mapeo top-down en 2D priorizando puntos de interés visual y reglas de diseño antes de entrar a la fase de greyboxing.",
+          mechanicsImage: "https://i.postimg.cc/qRZYYgLT/1920x1080Tavern.png"
+        }
+      ]
+    };
+
+    // =========================================================================
+    // LÓGICA DE RENDERIZADO (NO HACE FALTA TOCAR NADA ABAJO DE ESTA LÍNEA)
+    // =========================================================================
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function renderSite() {
+      document.getElementById('header-name').textContent = PORTFOLIO_DATA.name;
+      document.getElementById('footer-name').textContent = PORTFOLIO_DATA.name;
+      document.getElementById('header-title').textContent = PORTFOLIO_DATA.title;
+      document.getElementById('about-bio').textContent = PORTFOLIO_DATA.bio;
+      document.getElementById('github-link').href = PORTFOLIO_DATA.github;
+
+      // Render Skills
+      const skillsContainer = document.getElementById('skills-list');
+      skillsContainer.innerHTML = PORTFOLIO_DATA.skills.map(s => `<li>• ${s}</li>`).join('');
+
+      // Render Software
+      const softwareContainer = document.getElementById('software-list');
+      softwareContainer.innerHTML = PORTFOLIO_DATA.software.map(s => `<li>• ${s}</li>`).join('');
+
+      // Render Projects grouped by Category (Preservando el orden de definición)
+      const container = document.getElementById('projects-container');
+      container.innerHTML = '';
+
+      const categories = [];
+      PORTFOLIO_DATA.projects.forEach(p => {
+        if (!categories.includes(p.category)) {
+          categories.push(p.category);
+        }
+      });
+
+      categories.forEach(cat => {
+        const catProjects = PORTFOLIO_DATA.projects.filter(p => p.category === cat);
         
-        <!-- DASHBOARD HOME VIEW -->
-        <div id="view-home" class="space-y-12">
-            
-            <!-- 1. PROFESSIONAL EXPERIENCE -->
-            <section class="space-y-4">
-                <h2 class="text-xs font-extrabold uppercase tracking-widest text-slate-500">Professional Experience</h2>
-                <div id="grid-professional" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Injected dynamically via JS -->
-                </div>
-            </section>
-
-            <!-- 2. PERSONAL PROJECTS -->
-            <section class="space-y-4">
-                <h2 class="text-xs font-extrabold uppercase tracking-widest text-slate-500">Personal Projects</h2>
-                <div id="grid-personal" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <!-- Injected dynamically via JS -->
-                </div>
-            </section>
-
-            <!-- 3. EXERCISES & BLOCKOUTS -->
-            <section class="space-y-4">
-                <h2 class="text-xs font-extrabold uppercase tracking-widest text-slate-500">Exercises & Blockouts</h2>
-                <div id="grid-exercises" class="grid grid-cols-1 gap-6">
-                    <!-- Injected dynamically via JS -->
-                </div>
-            </section>
-
-            <!-- 4. BOTTOM 3-COLUMN INFO CARDS -->
-            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-                
-                <!-- Storytelling & Philosophy -->
-                <div class="bg-white rounded-2xl p-6 card-shadow flex flex-col justify-between space-y-4 border border-slate-100">
-                    <div class="space-y-3">
-                        <h3 class="text-base font-bold text-slate-900">Diseño & Narrativa Espacial</h3>
-                        <p id="about-storytelling" class="text-xs text-slate-600 leading-relaxed">
-                            <!-- Injected via JS -->
-                        </p>
-                        <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside pt-1">
-                            <li>Colaboración multidisciplinaria</li>
-                            <li>Guiado diegético: "Show, don't tell"</li>
-                            <li>Ritmos de tensión moldeados por el jugador</li>
-                            <li>Composición espacial y líneas de visión (Sightlines)</li>
-                        </ul>
+        const sectionHTML = `
+          <div>
+            <h2 class="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">${cat}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              ${catProjects.map(p => `
+                <div onclick="showDetail('${p.id}')" class="project-card cursor-pointer bg-white rounded-2xl overflow-hidden card-shadow flex flex-col justify-between">
+                  <div class="aspect-video w-full bg-gray-100 overflow-hidden">
+                    <img src="${p.coverImage}" alt="${p.title}" class="w-full h-full object-cover">
+                  </div>
+                  <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 class="font-bold text-gray-900 text-base mb-1">${p.title}</h3>
+                      <p class="text-xs text-gray-500 line-clamp-2">${p.shortDescription}</p>
                     </div>
-                </div>
-
-                <!-- Skills & Software -->
-                <div id="skills-section" class="bg-white rounded-2xl p-6 card-shadow border border-slate-100 space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-3">Skills</h3>
-                            <ul id="skills-list" class="text-xs text-slate-600 space-y-2 font-medium">
-                                <!-- Injected via JS -->
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-3">Software</h3>
-                            <ul id="software-list" class="text-xs text-slate-600 space-y-2 font-medium">
-                                <!-- Injected via JS -->
-                            </ul>
-                        </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center text-[10px] text-gray-400 font-semibold uppercase tracking-wider">
+                      <span>${p.engine}</span>
+                      <span>${p.role}</span>
                     </div>
+                  </div>
                 </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        container.innerHTML += sectionHTML;
+      });
+    }
 
-                <!-- About Me & Contact -->
-                <div id="about-section" class="bg-white rounded-2xl p-6 card-shadow border border-slate-100 flex flex-col justify-between space-y-4">
-                    <div class="space-y-3">
-                        <h3 class="text-base font-bold text-slate-900">Sobre Mí</h3>
-                        <p id="about-text" class="text-xs text-slate-600 leading-relaxed">
-                            <!-- Injected via JS -->
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <div id="social-links" class="flex gap-4 text-slate-500 text-lg">
-                            <!-- Injected via JS -->
-                        </div>
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">
-                            Level Designer
-                        </span>
-                    </div>
-                </div>
+    function showDetail(projectId) {
+      const p = PORTFOLIO_DATA.projects.find(proj => proj.id === projectId);
+      if (!p) return;
 
-            </section>
+      const detailContent = document.getElementById('detail-content');
+      detailContent.innerHTML = `
+        <div class="bg-white p-6 md:p-8 rounded-2xl card-shadow space-y-6">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-gray-100">
+            <div>
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">${p.category}</span>
+              <h2 class="text-2xl font-bold text-gray-900">${p.title}</h2>
+            </div>
+            <div class="flex gap-4 text-xs">
+              <div class="bg-gray-50 px-3 py-2 rounded-lg"><span class="text-gray-400 block text-[10px]">MOTOR / HERRAMIENTA</span><strong>${p.engine}</strong></div>
+              <div class="bg-gray-50 px-3 py-2 rounded-lg"><span class="text-gray-400 block text-[10px]">ROL</span><strong>${p.role}</strong></div>
+              <div class="bg-gray-50 px-3 py-2 rounded-lg"><span class="text-gray-400 block text-[10px]">TIEMPO</span><strong>${p.duration}</strong></div>
+            </div>
+          </div>
+
+          <div class="aspect-video w-full rounded-xl overflow-hidden bg-gray-100">
+            <img src="${p.coverImage}" class="w-full h-full object-cover">
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold text-gray-900">Resumen del Proyecto</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">${p.overview || p.shortDescription}</p>
+          </div>
         </div>
 
-        <!-- CASE STUDY DETAILED VIEW -->
-        <div id="view-detail" class="hidden space-y-8 animate-fadeIn">
-            <!-- Back Button -->
-            <button onclick="showHome()" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-900 bg-white px-4 py-2.5 rounded-xl card-shadow transition hover:-translate-x-1">
-                <i class="fa-solid fa-arrow-left"></i> Volver al Portfolio
-            </button>
-
-            <!-- Project Hero Card -->
-            <div id="detail-hero" class="bg-white rounded-2xl p-6 sm:p-8 card-shadow space-y-6 border border-slate-100">
-                <!-- Injected via JS -->
-            </div>
-
-            <!-- Level Flow & Sightlines Grid -->
-            <div id="detail-flow-container" class="bg-white rounded-2xl p-6 sm:p-8 card-shadow space-y-6 border border-slate-100 hidden">
-                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <i class="fa-solid fa-route text-indigo-500"></i> Level Flow & Sightlines
-                </h2>
-                <div id="detail-flow-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Injected via JS -->
-                </div>
-            </div>
-
-            <!-- Mechanics & Scripting Breakdown -->
-            <div id="detail-mechanics" class="bg-white rounded-2xl p-6 sm:p-8 card-shadow space-y-6 border border-slate-100 hidden">
-                <!-- Injected via JS -->
-            </div>
+        ${p.mechanicsText ? `
+        <div class="bg-white p-6 md:p-8 rounded-2xl card-shadow space-y-4">
+          <h3 class="text-lg font-bold text-gray-900">Desglose de Diseño</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">${p.mechanicsText}</p>
+          ${p.mechanicsImage ? `<img src="${p.mechanicsImage}" class="rounded-xl w-full object-cover max-h-96">` : ''}
         </div>
+        ` : ''}
+      `;
 
-    </main>
+      document.getElementById('view-home').classList.add('hidden');
+      document.getElementById('view-detail').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-    <!-- FOOTER -->
-    <footer class="max-w-6xl w-full mx-auto px-4 py-8 text-center text-xs text-slate-400 border-t border-slate-200/60 mt-auto">
-        <p>© <span id="footer-year"></span> <span id="footer-name-text">Francisco Di Paolo</span> | Level Designer Portfolio</p>
-    </footer>
+    function showHome() {
+      document.getElementById('view-detail').classList.add('hidden');
+      document.getElementById('view-home').classList.remove('hidden');
+    }
 
-    <!-- DATA & LOGIC SCRIPT -->
-    <script>
-        // =========================================================================
-        // ⚙️ TODOS TUS DATOS - PODÉS EDITAR ESTE OBJETO DIRECTAMENTE EN GITHUB
-        // =========================================================================
-        const PORTFOLIO_DATA = {
-            profile: {
-                name: "Francisco Di Paolo",
-                title: "Level Designer",
-                storytellingText: "El diseño de niveles me permite estructurar la narrativa a través del gameplay. Para lograr un gran diseño, me baso en tres pilares: colaboración multidisciplinaria, guiado indirecto ('show, don't tell') y ritmos de tensión claros (pacing).",
-                aboutText: "Diseñador de videojuegos enfocado en Level Design y diseño de espacios jugables. Apasionado por la arquitectura funcional, los metroidvania y el diseño de niveles 3D. Próximamente perfeccionando mi oficio en Japón 🇯🇵.",
-                email: "franciscodipaolo@email.com",
-                github: "https://github.com/Francisco-DiPaolo",
-                linkedin: "https://linkedin.com",
-                twitter: "https://x.com",
-                skills: [
-                    "Level Blockouts & Greyboxing",
-                    "Visual Sightlines & Guidance",
-                    "Pacing & Combat Encounters",
-                    "Blueprint & C# Scripting",
-                    "Environmental Storytelling",
-                    "Playtesting & Metric Analysis"
-                ],
-                software: [
-                    "Unreal Engine 5",
-                    "Unity Engine",
-                    "Blender / 3ds Max",
-                    "Photoshop / Figma",
-                    "ZBrush",
-                    "Perforce / GitHub"
-                ]
-            },
-            projects: [
-                {
-                    id: "taer",
-                    category: "Professional",
-                    title: "TAER - The Tavern at the End of the Road",
-                    tagline: "Aventura y narrativa espacial desarrollada en Unity. Enfoque en la distribución de espacios e itinerario del jugador.",
-                    coverImg: "https://i.postimg.cc/qRZYYgLT/1920x1080Tavern.png",
-                    videoUrl: "", // Poner link de Youtube si tenés uno
-                    engine: "Unity Engine",
-                    role: "Lead Level Designer",
-                    duration: "6 Meses",
-                    tools: ["Unity", "3ds Max", "C# Scripting", "ProBuilder"],
-                    overview: "Diseño e implementación de niveles para TAER. Enfoque principal en la composición espacial, el recorrido del jugador y la conducción visual mediante iluminación diegética y puntos de interés (Landmarks).",
-                    levelFlow: [
-                        {
-                            title: "1. Entrada & Vista Panorámica",
-                            desc: "El jugador entra por la zona principal de la taberna teniendo visibilidad inmediata de los puntos clave del nivel.",
-                            img: "https://i.postimg.cc/qRZYYgLT/1920x1080Tavern.png"
-                        },
-                        {
-                            title: "2. Pasillos & Encuentros",
-                            desc: "Transición a pasillos estrechos para alterar el pacing y preparar la tensión antes del área principal.",
-                            img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop"
-                        }
-                    ],
-                    mechanicTitle: "Interactividad Espacial & Pacing",
-                    mechanicDesc: "Diseño de desencadenantes de narrativa ambiental basados en la proximidad del jugador y líneas de visión estratégicas.",
-                    mechanicImg: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"
-                },
-                {
-                    id: "cucco-quest",
-                    category: "Personal",
-                    title: "Cucco Fetch Quest Level",
-                    tagline: "3D Action-Adventure Level - Zelda Style Guidance & Mobility",
-                    coverImg: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop",
-                    videoUrl: "",
-                    engine: "Unreal Engine 5",
-                    role: "Level Designer & Scripter",
-                    duration: "3 Semanas",
-                    tools: ["Unreal Engine 5", "Blender Blockout", "ALS Movement"],
-                    overview: "El objetivo fue diseñar un nivel vertical centrado en la movilidad, el planeo y la recolección pacífica. Uso de hitos visuales (Landmarks) para orientar al jugador sin necesidad de UI agresiva.",
-                    levelFlow: [
-                        {
-                            title: "Vista Panorámica del Valle",
-                            desc: "Composición top-down que permite identificar las 5 áreas principales desde el spawn inicial.",
-                            img: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=800&auto=format&fit=crop"
-                        },
-                        {
-                            title: "Ruta de Planeo Ventosa",
-                            desc: "Corrientes de aire indicadas con partículas para conectar plataformas flotantes.",
-                            img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop"
-                        }
-                    ],
-                    mechanicTitle: "Mecánica de Planeo e Impulso",
-                    mechanicDesc: "Integración de nodos de salto en greybox calculando tiempos de vuelo y métricas de caída exactas antes de aplicar vestidura de arte.",
-                    mechanicImg: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=800&auto=format&fit=crop"
-                },
-                {
-                    id: "neon-slums",
-                    category: "Personal",
-                    title: "Neon Slums Vertical Alleyway",
-                    tagline: "Urban Stealth & Verticality Level Flow",
-                    coverImg: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
-                    videoUrl: "",
-                    engine: "Unity Engine",
-                    role: "Solo Level Designer",
-                    duration: "4 Semanas",
-                    tools: ["Unity ProBuilder", "C# Scripting", "URP Lighting"],
-                    overview: "Nivel de sigilo urbano en tercera persona centrado en la verticalidad. Ofrece 3 rutas principales: Alcantarillas (Sigilo bajo), Calles (Combate) y Azoteas (Infiltración alta).",
-                    levelFlow: [
-                        {
-                            title: "Infiltración por Azoteas",
-                            desc: "Ruta de alto riesgo/recompensa con visión privilegiada de las patrullas enemigas.",
-                            img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop"
-                        }
-                    ],
-                    mechanicTitle: "Líneas de Visión (Sightlines)",
-                    mechanicDesc: "Colocación estratégica de carteles publicitarios de neón para bloquear la visión de tiradores lejanos y ofrecer coberturas dinámicas.",
-                    mechanicImg: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop"
-                },
-                {
-                    id: "greybox-exercises",
-                    category: "Exercises",
-                    title: "Greybox, Pacing & Metrics Studies",
-                    tagline: "Estudios de Métricas 3D, Zonas de Cobertura y Diagramación Top-Down 2D",
-                    coverImg: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1200&auto=format&fit=crop",
-                    videoUrl: "",
-                    engine: "Unreal Engine 5 / Maya",
-                    role: "Level Designer",
-                    duration: "Continuo",
-                    tools: ["Unreal Geometry", "Métricas 3D", "Diagramas 2D"],
-                    overview: "Colección de ejercicios y pruebas semanales probando métricas de salto, tiempos de reacción en coberturas y flujos de combate shooters en 3ra persona.",
-                    levelFlow: [],
-                    mechanicTitle: "Análisis de Coberturas para Combat Arenas",
-                    mechanicDesc: "Pruebas de distribución de utilería baja (1.2m) y alta (2.1m) para mantener el flujo constante del jugador durante tiroteos.",
-                    mechanicImg: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop"
-                }
-            ]
-        };
-
-        // =========================================================================
-        // RENDERING & INTERACTION ENGINE
-        // =========================================================================
-        document.getElementById('footer-year').textContent = new Date().getFullYear();
-
-        function renderPortfolio() {
-            const p = PORTFOLIO_DATA.profile;
-            document.getElementById('header-name').textContent = p.name;
-            document.getElementById('header-title').textContent = p.title;
-            document.getElementById('footer-name-text').textContent = p.name;
-            document.getElementById('about-storytelling').textContent = p.storytellingText;
-            document.getElementById('about-text').textContent = p.aboutText;
-
-            // Render Skills & Software
-            document.getElementById('skills-list').innerHTML = p.skills.map(s => `<li>• ${s}</li>`).join('');
-            document.getElementById('software-list').innerHTML = p.software.map(sw => `<li>• ${sw}</li>`).join('');
-
-            // Render Social Icons
-            document.getElementById('social-links').innerHTML = `
-                ${p.github ? `<a href="${p.github}" target="_blank" class="hover:text-slate-900 transition"><i class="fa-brands fa-github"></i></a>` : ''}
-                ${p.linkedin ? `<a href="${p.linkedin}" target="_blank" class="hover:text-slate-900 transition"><i class="fa-brands fa-linkedin"></i></a>` : ''}
-                ${p.twitter ? `<a href="${p.twitter}" target="_blank" class="hover:text-slate-900 transition"><i class="fa-brands fa-x-twitter"></i></a>` : ''}
-                ${p.email ? `<a href="mailto:${p.email}" class="hover:text-slate-900 transition"><i class="fa-solid fa-envelope"></i></a>` : ''}
-            `;
-
-            // Render Grids
-            const profGrid = document.getElementById('grid-professional');
-            const persGrid = document.getElementById('grid-personal');
-            const exGrid = document.getElementById('grid-exercises');
-
-            profGrid.innerHTML = '';
-            persGrid.innerHTML = '';
-            exGrid.innerHTML = '';
-
-            PORTFOLIO_DATA.projects.forEach(proj => {
-                if (proj.category === 'Professional') {
-                    profGrid.innerHTML += `
-                        <div onclick="showDetail('${proj.id}')" class="project-card cursor-pointer bg-white rounded-2xl overflow-hidden card-shadow border border-slate-100 flex flex-col justify-between">
-                            <div class="aspect-[4/5] bg-slate-200 relative overflow-hidden">
-                                <img src="${proj.coverImg}" alt="${proj.title}" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md px-2 py-0.5 rounded text-white mb-2 inline-block">${proj.engine}</span>
-                                    <h3 class="text-lg font-extrabold leading-tight text-white">${proj.title}</h3>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                } else if (proj.category === 'Personal') {
-                    persGrid.innerHTML += `
-                        <div onclick="showDetail('${proj.id}')" class="project-card cursor-pointer bg-white rounded-2xl overflow-hidden card-shadow border border-slate-100 flex flex-col justify-between">
-                            <div class="aspect-video bg-slate-200 relative overflow-hidden">
-                                <img src="${proj.coverImg}" alt="${proj.title}" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-70"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-                                    <h3 class="text-base font-bold leading-tight">${proj.title}</h3>
-                                    <p class="text-xs text-slate-200 line-clamp-1 mt-0.5">${proj.tagline}</p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                } else if (proj.category === 'Exercises') {
-                    exGrid.innerHTML += `
-                        <div onclick="showDetail('${proj.id}')" class="project-card cursor-pointer bg-white rounded-2xl overflow-hidden card-shadow border border-slate-100">
-                            <div class="h-44 sm:h-56 bg-slate-800 relative overflow-hidden">
-                                <img src="${proj.coverImg}" alt="${proj.title}" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <span class="text-xs font-semibold text-indigo-300 uppercase tracking-wider block mb-1">Blockout Study</span>
-                                    <h3 class="text-xl font-bold">${proj.title}</h3>
-                                    <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">${proj.tagline}</p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                }
-            });
-        }
-
-        function showDetail(projectId) {
-            const proj = PORTFOLIO_DATA.projects.find(p => p.id === projectId);
-            if (!proj) return;
-
-            // Render Hero Box
-            const detailHero = document.getElementById('detail-hero');
-            detailHero.innerHTML = `
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    <div class="lg:col-span-7 bg-slate-900 rounded-xl overflow-hidden aspect-video relative shadow-md">
-                        ${proj.videoUrl ? `
-                            <iframe class="w-full h-full" src="${proj.videoUrl}" title="${proj.title}" allowfullscreen></iframe>
-                        ` : `
-                            <img src="${proj.coverImg}" alt="${proj.title}" class="w-full h-full object-cover">
-                        `}
-                    </div>
-                    <div class="lg:col-span-5 space-y-4">
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">
-                                ${proj.category} Project
-                            </span>
-                            <h1 className="text-2xl font-extrabold text-slate-900 mt-2">${proj.title}</h1>
-                            <p className="text-xs text-slate-500 font-medium mt-1">${proj.tagline}</p>
-                        </div>
-                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
-                            ${proj.overview}
-                        </p>
-                        <div class="bg-slate-50 rounded-xl p-4 text-xs space-y-2 border border-slate-100">
-                            <div class="flex justify-between"><span class="text-slate-400 font-medium">Motor:</span> <span class="font-semibold text-slate-800">${proj.engine}</span></div>
-                            <div class="flex justify-between"><span class="text-slate-400 font-medium">Rol:</span> <span class="font-semibold text-slate-800">${proj.role}</span></div>
-                            <div class="flex justify-between"><span class="text-slate-400 font-medium">Tiempo:</span> <span class="font-semibold text-slate-800">${proj.duration}</span></div>
-                            <div class="pt-2 border-t border-slate-200">
-                                <span class="text-slate-400 font-medium block mb-1">Herramientas:</span>
-                                <div class="flex flex-wrap gap-1">
-                                    ${proj.tools.map(t => `<span class="bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200 font-medium text-[11px]">${t}</span>`).join('')}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            // Render Level Flow
-            const flowContainer = document.getElementById('detail-flow-container');
-            const flowGrid = document.getElementById('detail-flow-grid');
-            if (proj.levelFlow && proj.levelFlow.length > 0) {
-                flowGrid.innerHTML = proj.levelFlow.map(step => `
-                    <div class="bg-slate-50 rounded-xl overflow-hidden border border-slate-100 flex flex-col">
-                        <div class="aspect-video bg-slate-200 overflow-hidden">
-                            <img src="${step.img}" alt="${step.title}" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-4 flex-grow">
-                            <h3 class="font-bold text-xs text-slate-900 mb-1">${step.title}</h3>
-                            <p class="text-[11px] text-slate-600 leading-relaxed">${step.desc}</p>
-                        </div>
-                    </div>
-                `).join('');
-                flowContainer.classList.remove('hidden');
-            } else {
-                flowContainer.classList.add('hidden');
-            }
-
-            // Render Mechanics
-            const mechContainer = document.getElementById('detail-mechanics');
-            if (proj.mechanicTitle) {
-                mechContainer.innerHTML = `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div class="space-y-3">
-                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Design Breakdown</span>
-                            <h2 class="text-lg font-bold text-slate-900">${proj.mechanicTitle}</h2>
-                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${proj.mechanicDesc}</p>
-                        </div>
-                        <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-900 aspect-video">
-                            <img src="${proj.mechanicImg}" alt="Mechanic" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                `;
-                mechContainer.classList.remove('hidden');
-            } else {
-                mechContainer.classList.add('hidden');
-            }
-
-            // Switch Views
-            document.getElementById('view-home').classList.add('hidden');
-            document.getElementById('view-detail').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function showHome() {
-            document.getElementById('view-detail').classList.add('hidden');
-            document.getElementById('view-home').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Initialize on Load
-        renderPortfolio();
-    </script>
+    // Inicializar
+    renderSite();
+  </script>
 </body>
 </html>
